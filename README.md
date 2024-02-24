@@ -2,7 +2,7 @@
 
 ### Overview
 
-The project 3 around the US is a responsive design created for users to show the beautiful tourist areas that are possible to visit in the US. the users have the ability to enjoy and like others travel photos or add their own. Compatible on both desktop and mobile screens.
+The project 3 around the US is a responsive design created for users to show the beautiful tourist areas that are possible to visit in the US. the users have the ability to enjoy and like others travel photos or add their own. Compatible on both desktop and mobile screens. Some things that i can improve on would be some more fun interactive transitions for the desktop view. As well as something to allow descriptions and directions for the areas.
 
 - Intro
 - Figma

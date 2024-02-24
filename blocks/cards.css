@@ -1,0 +1,83 @@
+.cards {
+  margin-top: 47px;
+  margin-bottom: 67px;
+  max-width: 880px;
+  width: 100%;
+}
+
+.cards__list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  gap: 20px 17px;
+  padding: 0;
+  margin: 0;
+}
+
+.cards__image {
+  width: 282px;
+  height: 282px;
+  background-position: center;
+  background-size: cover;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.cards__like-button {
+  background: url(../images/Heart-Vector.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 21px;
+  height: 18px;
+  margin-right: 20px;
+  border: none;
+  background-position: center;
+  transition: opacity 0.2s linear;
+  align-self: center;
+}
+
+.cards__like-button:hover {
+  opacity: 0.7;
+}
+
+.cards__title {
+  font-size: 24px;
+  line-height: 29.05px;
+  max-width: 219px;
+  font-weight: 900;
+  font-family: "Inter", sans-serif;
+  max-width: 219px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cards__description {
+  background-color: white;
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.cards__element {
+  height: 361px;
+}
+
+@media screen and (max-width: 925px) {
+  .cards__list {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cards__list {
+    margin-top: 36px;
+  }
+}

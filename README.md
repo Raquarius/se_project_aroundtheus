@@ -25,3 +25,8 @@ Good luck and have fun!
 Link to project:
 
 https://raquarius.github.io/se_project_aroundtheus
+
+Link tp description video:
+
+https://www.loom.com/share/f0ec2ef02d404dd096a71067ea37fbe7
+https://www.loom.com/spaces/All-Rickys-Workspace-26944113

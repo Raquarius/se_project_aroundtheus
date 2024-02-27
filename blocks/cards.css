@@ -66,7 +66,7 @@
 }
 
 .cards__element {
-  height: 361px;
+  min-height: 361px;
 }
 
 @media screen and (max-width: 925px) {

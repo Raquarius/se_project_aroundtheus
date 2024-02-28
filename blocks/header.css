@@ -1,26 +1,27 @@
 .header {
   max-width: 880px;
-  height: 74px;
+  min-height: 74px;
   padding: 45px 0 0;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgb(84 84 84 / 0.7);
   width: 100%;
 }
 
 .header__logo {
   color: white;
-  width: 126px;
+  max-width: 173px;
+  min-height: 33px;
 }
 
 @media screen and (max-width: 480px) {
   .header {
-    margin: 26px 163px 0 0;
-    padding-bottom: 32px;
+    padding: 0;
+    max-height: 56px;
     width: 100%;
   }
   .header__logo {
-    margin-left: 25px;
-    height: 24px;
-    width: 126px;
+    margin: 28px 167px 0 27px;
+    min-height: 24px;
+    max-width: 126px;
   }
 }
 @media screen and (max-width: 925px) {

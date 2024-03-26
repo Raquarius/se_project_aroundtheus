@@ -58,7 +58,7 @@
   margin-top: 54px;
 }
 
-.form__input_name {
+.modal__input_name {
   border: none;
   border-bottom: 1px solid #000;
   line-height: 17px;
@@ -66,7 +66,7 @@
   font-weight: 400;
 }
 
-.form__input_occupation {
+.modal__input_occupation {
   margin-top: 29.75px;
   border: none;
   border-bottom: 1px solid #000;
@@ -116,10 +116,10 @@
     max-width: 238px;
     margin: 0;
   }
-  .form__input_name {
+  .modal__input_name {
     max-width: 238px;
   }
-  .form__input_occupation {
+  .modal__input_occupation {
     max-width: 238px;
   }
 }

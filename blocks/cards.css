@@ -24,7 +24,7 @@
 }
 
 .cards__like-button {
-  background: url(../images/Heart-Vector.svg);
+  background: url(../images/heart-vector.svg);
   background-repeat: no-repeat;
   background-size: contain;
   width: 21px;

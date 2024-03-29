@@ -37,7 +37,6 @@ const profileEditForm = document.querySelector(".modal__form");
 const cardsTemplate =
   document.querySelector("#cards-template").content.firstElementChild;
 const cardsListElement = document.querySelector(".cards__list");
-const profileEditSaveBtn = profileEditForm.querySelector(".modal__button");
 
 function closePopup(closePopup) {
   closePopup.classList.remove("modal_opened");
@@ -54,10 +53,9 @@ function getCardElement(cardsData) {
   const cardsElement = cardsTemplate.cloneNode(true);
   const cardsImageElement = cardsElement.querySelector(".cards__image");
   const cardsTitleElement = cardsElement.querySelector(".cards__title");
-  const cardsAltElement = cardsImageElement;
   cardsTitleElement.textContent = cardsData.name;
   cardsImageElement.src = cardsData.link;
-  cardsAltElement.alt = cardsData.name;
+  cardsImageElement.alt = cardsData.name;
   return cardsElement;
 }
 
@@ -70,7 +68,7 @@ profileEditBtn.addEventListener("click", function () {
 profileEditCloseBtn.addEventListener("click", () =>
   closePopup(profileEditModal)
 );
-profileEditSaveBtn.addEventListener("submit", handleProfileEditSubmit);
+profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 for (let i = 0; i < initialCards.length; i++) {
   const cardsData = initialCards[i];

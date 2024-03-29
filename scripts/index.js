@@ -70,7 +70,7 @@ profileEditBtn.addEventListener("click", function () {
 profileEditCloseBtn.addEventListener("click", () =>
   closePopup(profileEditModal)
 );
-profileEditSaveBtn.addEventListener("click", handleProfileEditSubmit);
+profileEditSaveBtn.addEventListener("submit", handleProfileEditSubmit);
 
 for (let i = 0; i < initialCards.length; i++) {
   const cardsData = initialCards[i];

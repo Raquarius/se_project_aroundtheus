@@ -41,7 +41,7 @@
 
 .modal__close:hover {
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .modal__header {
@@ -61,7 +61,7 @@
 
 .modal__form-input {
   border: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(0, 0, 0 / 0.2);
   line-height: 17px;
   font-size: 14px;
   font-weight: 400;
@@ -86,7 +86,7 @@
 
 .modal__button:hover {
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 660px) {
@@ -95,7 +95,8 @@
   }
   .modal__close {
     top: -50px;
-    left: 280px;
+    left: unset;
+    right: 0;
     height: 26px;
     width: 26px;
   }
@@ -114,10 +115,7 @@
     max-width: 238px;
     margin: 0;
   }
-  .modal__input_name {
-    max-width: 238px;
-  }
-  .modal__input_occupation {
+  .modal__form-input {
     max-width: 238px;
   }
 }

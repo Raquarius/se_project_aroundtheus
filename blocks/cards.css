@@ -23,6 +23,24 @@
   border-top-left-radius: 10px;
 }
 
+.cards__delete-button {
+  background: url(../images/delete-button.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 18px;
+  height: 19.3px;
+  border: none;
+  position: relative;
+  left: 250px;
+  top: 35px;
+}
+
+.cards__delete-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
 .cards__like-button {
   background: url(../images/heart-vector.svg);
   background-repeat: no-repeat;
@@ -39,6 +57,10 @@
 .cards__like-button:hover {
   opacity: 0.5;
   cursor: pointer;
+}
+
+.cards__like-button_active {
+  background-image: url(../images/like-button-active.svg);
 }
 
 .cards__title {

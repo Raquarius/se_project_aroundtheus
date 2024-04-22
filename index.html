@@ -42,7 +42,11 @@
               ></button>
               <p class="profile__occupation">Explorer</p>
             </div>
-            <button type="button" class="profile__add-button"></button>
+            <button
+              type="button"
+              class="profile__add-button"
+              id="card-add-btn"
+            ></button>
           </section>
           <section class="cards page__section">
             <ul class="cards__list"></ul>
@@ -79,10 +83,52 @@
           </form>
         </div>
       </div>
+      <div class="modal" id="card-add-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close"></button>
+          <h2 class="modal__header">New Place</h2>
+          <form class="modal__form">
+            <label class="modal__label">
+              <input
+                class="modal__form-input"
+                type="text"
+                name="title"
+                placeholder="Title"
+                id="card-title-input"
+              />
+            </label>
+            <label class="modal__label">
+              <input
+                class="modal__form-input"
+                type="text"
+                name="image-link"
+                placeholder="Image link"
+                id="card-url-input"
+              />
+            </label>
+            <button type="submit" class="modal__button">Create</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="preview-image-modal">
+        <div class="preview">
+          <div class="preview__container">
+            <button
+              type="button"
+              class="modal__close"
+              id="preview__close-button"
+            ></button>
+            <img class="preview__image" alt="" src="" />
+            <p class="preview__caption"></p>
+          </div>
+        </div>
+      </div>
     </div>
     <template id="cards-template">
       <li class="cards__element">
+        <button type="button" class="cards__delete-button"></button>
         <img class="cards__image" src="" alt="" />
+        <!-- Apologies, now understanding commit utility and importance, will do better commits for the next section of the project -->
         <div class="cards__description">
           <h2 class="cards__title"></h2>
           <button type="submit" class="cards__like-button"></button>

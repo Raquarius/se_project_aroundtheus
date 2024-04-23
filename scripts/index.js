@@ -77,7 +77,7 @@ function handleDeleteCard(evt) {
   evt.target.closest(".cards__element").remove();
 }
 function handlePreviewImageModal(cardsData) {
-  previewImgModal.classList.add("modal_opened");
+  openPopup(previewImgModal);
   previewImageElement.src = cardsData.link;
   previewImageCaption.textContent = cardsData.name;
   previewImageElement.alt = cardsData.name;

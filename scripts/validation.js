@@ -6,23 +6,54 @@ function showInputError(
   const errorMessageElement = formElement.querySelector(
     `#${inputElement.id}-error`
   );
-  inputElement.classlist.add(inputErrorClass);
+  inputElement.classList.add(inputErrorClass);
   errorMessageElement.textContent = inputElement.validationMessage;
-  errorMessageElement.classlist.add(errorClass);
+  errorMessageElement.classList.add(errorClass);
+}
+function hideInputError(formElement, inputElement, { inputErrorClass }) {
+  // const inputErrorClass = "modal__input_type_error";
+  const errorMessageElement = formElement.querySelector(
+    `#${inputElement.id}-error`
+  );
+  inputElement.classList.remove(inputErrorClass);
+  errorMessageElement.textContent = " ";
+  errorMessageElement.classList.remove(inputErrorClass);
+  console.log(inputErrorClass);
 }
 function checkInputValidity(formElement, inputElement, options) {
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, options);
-  } else {
-    hideInputError(formElement, inputElement, options);
+    return showInputError(formElement, inputElement, options);
   }
+  hideInputError(formElement, inputElement, options);
+}
+function toggleButtonState(
+  inputElements,
+  submitButtonSelector,
+  { inactiveButtonClass }
+) {
+  let foundInvalid = false;
+  inputElements.forEach((inputElement) => {
+    if (!inputElement.validity.valid) {
+      foundInvalid = true;
+    }
+    if (foundInvalid) {
+      submitButtonSelector.classList.add(inactiveButtonClass);
+      return (submitButtonSelector.disabled = true);
+    }
+    submitButtonSelector.classList.remove(inactiveButtonClass);
+    submitButtonSelector.disabled = false;
+  });
 }
 
 function setEventListener(formElement, options) {
   const { inputSelector } = options;
   const inputElements = [...formElement.querySelectorAll(inputSelector)];
+  const submitButtonSelector = formElement.querySelector(".modal__button");
   inputElements.forEach((inputElement) => {
-    inputElement.addEventListener("input", (evt) => {});
+    inputElement.addEventListener("input", (evt) => {
+      checkInputValidity(formElement, inputElement, options);
+      toggleButtonState(inputElements, submitButtonSelector, options);
+    });
   });
 }
 function enableValidation(options) {

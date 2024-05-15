@@ -51,6 +51,8 @@ const closeButtons = document.querySelectorAll(".modal__close");
 
 function closePopup(closePopup) {
   closePopup.classList.remove("modal_opened");
+  // document.removeEventListener("keydown", closePopup);
+  // closePopup.removeEventListener("mousedown", closePopup);
 }
 function openPopup(popup) {
   popup.classList.add("modal_opened");

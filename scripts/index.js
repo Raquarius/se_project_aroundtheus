@@ -51,7 +51,11 @@ const closeButtons = document.querySelectorAll(".modal__close");
 
 function closePopup(closePopup) {
   closePopup.classList.remove("modal_opened");
-  // document.removeEventListener("keydown", closePopup);
+  document.addEventListener("keypress", (evt) => {
+    if (evt.key === "escape") {
+      closePopup;
+    }
+  });
   // closePopup.removeEventListener("mousedown", closePopup);
 }
 function openPopup(popup) {
@@ -63,6 +67,7 @@ function renderCard(cardsData) {
 }
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
+  const disableButton = document.querySelector("modal__button_disable");
   profileName.textContent = profileNameInput.value;
   profileOccupation.textContent = profileOccupationInput.value;
   closePopup(profileEditModal);

@@ -99,7 +99,7 @@
   color: red;
   transition: opacity 0.3s;
 }
-.modal__button_disable {
+.modal__button_disabled {
   opacity: 0.2;
 }
 @media screen and (max-width: 660px) {

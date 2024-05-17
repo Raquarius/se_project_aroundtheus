@@ -67,7 +67,7 @@ function renderCard(cardsData) {
 }
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
-  const disableButton = document.querySelector("modal__button_disable");
+  const disableButton = document.querySelector("modal__button_disabled");
   profileName.textContent = profileNameInput.value;
   profileOccupation.textContent = profileOccupationInput.value;
   closePopup(profileEditModal);

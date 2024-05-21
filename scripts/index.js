@@ -49,17 +49,30 @@ const previewImageElement = previewImgModal.querySelector(".preview__image");
 const previewImageCaption = previewImgModal.querySelector(".preview__caption");
 const closeButtons = document.querySelectorAll(".modal__close");
 
+function handleClickEscape(evt) {
+  console.log("here");
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_opened");
+    closePopup(openModal);
+  }
+}
+function handleOverlayClick(evt) {
+  if (
+    evt.target.classList.contains("modal") ||
+    evt.target.classList.contains("preview")
+  ) {
+    const openModal = document.querySelector(".modal_opened");
+    closePopup(openModal);
+  }
+}
+
 function closePopup(closePopup) {
   closePopup.classList.remove("modal_opened");
-  document.addEventListener("keypress", (evt) => {
-    if (evt.key === "escape") {
-      closePopup;
-    }
-  });
-  // closePopup.removeEventListener("mousedown", closePopup);
+  document.removeEventListener("keydown", handleClickEscape);
 }
 function openPopup(popup) {
   popup.classList.add("modal_opened");
+  document.addEventListener("keydown", handleClickEscape);
 }
 function renderCard(cardsData) {
   const cardsElement = getCardElement(cardsData);
@@ -108,6 +121,9 @@ function getCardElement(cardsData) {
   return cardsElement;
 }
 
+profileEditModal.addEventListener("mousedown", handleOverlayClick);
+addCardModal.addEventListener("mousedown", handleOverlayClick);
+previewImgModal.addEventListener("mousedown", handleOverlayClick);
 addCardBtn.addEventListener("click", () => openPopup(addCardModal));
 profileEditBtn.addEventListener("click", function () {
   openPopup(profileEditModal);

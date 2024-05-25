@@ -49,7 +49,7 @@ const previewImageElement = previewImgModal.querySelector(".preview__image");
 const previewImageCaption = previewImgModal.querySelector(".preview__caption");
 const closeButtons = document.querySelectorAll(".modal__close");
 
-function handleClickEscape(evt) {
+function handleEscape(evt) {
   console.log("here");
   if (evt.key === "Escape") {
     const openModal = document.querySelector(".modal_opened");
@@ -60,19 +60,19 @@ function handleOverlayClick(evt) {
   if (
     evt.target.classList.contains("modal") ||
     evt.target.classList.contains("preview")
-  ) {
-    const openModal = document.querySelector(".modal_opened");
-    closePopup(openModal);
+  );
+  {
+    closePopup(evt.target);
   }
 }
 
 function closePopup(closePopup) {
   closePopup.classList.remove("modal_opened");
-  document.removeEventListener("keydown", handleClickEscape);
+  document.removeEventListener("keydown", handleEscape);
 }
 function openPopup(popup) {
   popup.classList.add("modal_opened");
-  document.addEventListener("keydown", handleClickEscape);
+  document.addEventListener("keydown", handleEscape);
 }
 function renderCard(cardsData) {
   const cardsElement = getCardElement(cardsData);
@@ -80,7 +80,6 @@ function renderCard(cardsData) {
 }
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
-  const disableButton = document.querySelector("modal__button_disabled");
   profileName.textContent = profileNameInput.value;
   profileOccupation.textContent = profileOccupationInput.value;
   closePopup(profileEditModal);

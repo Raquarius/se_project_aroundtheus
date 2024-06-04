@@ -65,14 +65,10 @@ function handleOverlayClick(evt) {
 function closePopup(closePopup) {
   closePopup.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscape);
-  document.removeEventListener("mousedown", handleOverlayClick);
-  // remove evnt lstnr
 }
 function openPopup(popup) {
   popup.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscape);
-  document.addEventListener("mousedown", handleOverlayClick);
-  //  create evnt listnr on click modal background should exist here
 }
 function renderCard(cardsData) {
   const cardsElement = getCardElement(cardsData);

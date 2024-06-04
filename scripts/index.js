@@ -57,10 +57,7 @@ function handleEscape(evt) {
   }
 }
 function handleOverlayClick(evt) {
-  if (
-    evt.target.classList.contains("modal") ||
-    evt.target.classList.contains("preview")
-  );
+  if (evt.target.classList.contains("modal"));
   {
     closePopup(evt.target);
   }

@@ -1,3 +1,6 @@
+import Card from "../components/card.js";
+import FormValidator from "../components/formValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -24,6 +27,14 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+
+const cardData = {
+  name: "Yosemite Valley",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+};
+const card = new Card(cardData, "#cards-template");
+card.getView();
+
 const profileEditBtn = document.querySelector("#profile-edit-btn");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileName = document.querySelector(".profile__name");
@@ -61,19 +72,6 @@ function handleOverlayClick(evt) {
     closePopup(evt.target);
   }
 }
-
-function closePopup(closePopup) {
-  closePopup.classList.remove("modal_opened");
-  document.removeEventListener("keydown", handleEscape);
-}
-function openPopup(popup) {
-  popup.classList.add("modal_opened");
-  document.addEventListener("keydown", handleEscape);
-}
-function renderCard(cardsData) {
-  const cardsElement = getCardElement(cardsData);
-  cardsListElement.prepend(cardsElement);
-}
 function handleProfileEditSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = profileNameInput.value;
@@ -96,6 +94,19 @@ function handlePreviewImageModal(cardsData) {
   previewImageElement.src = cardsData.link;
   previewImageCaption.textContent = cardsData.name;
   previewImageElement.alt = cardsData.name;
+}
+
+function closePopup(closePopup) {
+  closePopup.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscape);
+}
+function openPopup(popup) {
+  popup.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscape);
+}
+function renderCard(cardsData) {
+  const cardsElement = getCardElement(cardsData);
+  cardsListElement.prepend(cardsElement);
 }
 function getCardElement(cardsData) {
   const cardsElement = cardsTemplate.cloneNode(true);
